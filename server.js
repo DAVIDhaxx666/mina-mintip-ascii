@@ -7,6 +7,8 @@ const FRAMES_DIR = 'frames';
 const FRAME_DELAY_MS = 50; // 0.041 seconds transformed to milliseconds
 const RESET_CURSOR = '\x1b[H';
 const CLEAR_SCREEN = '\x1b[2J';
+// Use Render's dynamic port, or fallback to 6767 locally
+const PORT = process.env.PORT || 6767;
 
 const server = http.createServer((req, res) => {
     // 1. Only serve clients connecting via curl
@@ -64,7 +66,7 @@ const server = http.createServer((req, res) => {
     });
 });
 
-server.listen(6767, () => {
-    console.log('Video Terminal Server running on http://localhost:6767');
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`Video Terminal Server running on port ${PORT}`);
 });
 
