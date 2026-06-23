@@ -1,0 +1,12 @@
+{
+  "name": "mina-mintip-ascii",
+  "version": "1.0.0",
+  "description": "Streams ANSI art frames over curl",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
